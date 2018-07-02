@@ -19,7 +19,13 @@ if (message.channel.type === 'dm') {
 	if (message.author.bot) return;
 	message.channel.send(':x: Error: **Je ne peux pas répondre correctement à vos messages, je suis un bot tout de même !** \nhttps://www.tenor.co/GAaY.gif')
 }
-
+if (message.content.startsWith(prefix + 'annonce')) {
+        if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Vous ne pouvez pas faire ça !')
+        let args = message.content.split(' ')
+        args.shift()
+        message.channel.send('@everyone '+ args.join(' '))
+        message.delete()
+    }
 if (message.content === prefix + 'help') {
 	let color = '#87E110'
 	message.channel.send(`Vous avez reçu l'aide en privé ${message.author}`)
