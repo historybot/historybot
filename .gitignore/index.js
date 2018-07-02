@@ -20,7 +20,9 @@ if (message.channel.type === 'dm') {
 	message.channel.send(':x: Error: **Je ne peux pas répondre correctement à vos messages, je suis un bot tout de même !** \nhttps://www.tenor.co/GAaY.gif')
 }
 if (message.content.startsWith(prefix + 'annonce')) {
+	console.log('Annonce')
         if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Vous ne pouvez pas faire ça !')
+	console.log('Il a les perms')
         let args = message.content.split(' ')
         args.shift()
         message.channel.send('@everyone '+ args.join(' '))
