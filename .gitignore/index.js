@@ -12,7 +12,7 @@ bot.on('ready', function () {
 	bot.user.setStatus('online')
 	bot.user.setAvatar('./logo.png')
 	console.log('Je suis prêt ^^')
-	bot.user.setStatus("online");
+	console.log('Le !annonce est aussi prêt !')
 })
 bot.on('message', async message =>{
 if (message.channel.type === 'dm') {
